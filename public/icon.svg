@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Beside Me app icon">
+  <rect width="512" height="512" rx="96" fill="#0F766E" />
+  <!-- Two steady figures standing side by side: parent and helper -->
+  <circle cx="204" cy="176" r="36" fill="#F8FAFC" />
+  <path d="M136 336c0-42 30-72 68-72s68 30 68 72v24H136v-24z" fill="#F8FAFC" />
+  <circle cx="316" cy="204" r="28" fill="#CCFBF1" />
+  <path d="M264 336c0-32 23-56 52-56s52 24 52 56v24H264v-24z" fill="#CCFBF1" />
+</svg>

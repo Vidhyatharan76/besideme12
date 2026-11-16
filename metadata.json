@@ -1,0 +1,6 @@
+{
+  "name": "Beside Me",
+  "description": "A mobile-first, offline-ready Family Visit Prep Kit helping parents prepare for school, clinic, and bank or official visits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

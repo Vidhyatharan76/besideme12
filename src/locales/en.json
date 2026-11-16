@@ -1,0 +1,378 @@
+{
+  "_meta": {
+    "code": "en",
+    "nativeName": "English",
+    "englishName": "English",
+    "dir": "ltr",
+    "status": "reviewed",
+    "needsReview": false
+  },
+  "common": {
+    "appName": "Beside Me",
+    "appSubtitle": "Family Visit Prep Kit",
+    "footerPrivacy": "Sign in to open your private family visit prep kit.",
+    "footerPrivacySignedIn": "Your words and progress are saved privately to your account.",
+    "skipToMain": "Skip to main content",
+    "languageLabel": "Choose your language",
+    "myLanguageLabel": "My language",
+    "localLanguageLabel": "Local language",
+    "searchLanguagePlaceholder": "Search language (e.g. Arabic, Español, 日本語)",
+    "reviewedLabel": "Reviewed",
+    "machineTranslatedNotice": "Automatically translated. Please check important words with someone you trust.",
+    "translationOfflineFallback": "Could not translate right now. Showing English text so nothing is lost.",
+    "noLanguagesFound": "No matching languages",
+    "translateWordButton": "Translate",
+    "translatingWord": "Translating...",
+    "selectLanguagesButton": "Languages",
+    "localLanguageName": "English",
+    "needsReviewNotice": "",
+    "offlineBanner": "Offline mode — saved on this device and ready to use.",
+    "installApp": "Save to home screen",
+    "iosInstallTitle": "Save Beside Me on your iPhone or iPad",
+    "iosInstallStep1": "Tap the Share button in Safari.",
+    "iosInstallStep2": "Scroll down and tap Add to Home Screen.",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "stepCounter": "Step {{current}} of {{total}}",
+    "resetData": "Clear saved data",
+    "resetConfirm": "Cleared. Everything starts fresh.",
+    "print": "Print",
+    "inLocalLanguage": "In {{language}} (for the desk)",
+    "inYourLanguage": "In {{language}}"
+  },
+  "auth": {
+    "signIn": "Sign up or sign in with Google",
+    "signOut": "Sign out",
+    "signedInAs": "Signed in as {{email}}",
+    "signInHint": "Your words, practiced questions, and settings are saved privately to your account.",
+    "syncing": "Saving your changes...",
+    "syncError": "Could not reach your account right now. Changes are kept on this device.",
+    "gateTitle": "Sign up or sign in to open Beside Me",
+    "gateSubtitle": "Choose your languages first, then continue with Google. New accounts are created automatically and customized right away.",
+    "gateBenefit1": "Save your words, questions, and visit checklist privately across devices.",
+    "gateBenefit2": "Customize your name, family role, and upcoming school, clinic, or bank visits.",
+    "gateBenefit3": "Prepare side by side with your teen helper—never using your child as an interpreter.",
+    "continueWithGoogle": "Continue with Google",
+    "signingIn": "Opening sign-in...",
+    "loadingAccount": "Checking your account...",
+    "popupBlockedError": "Your browser blocked the sign-in window. Please allow popups and try again.",
+    "popupClosedError": "Sign-in was canceled. Tap Continue with Google whenever you are ready.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "e.g., parent@example.com",
+    "passwordLabel": "Password (at least 6 characters)",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Sign in",
+    "signUpButton": "Create account",
+    "modeSwitchToSignUp": "Don't have an account? Sign up",
+    "modeSwitchToSignIn": "Already have an account? Sign in",
+    "emailRequiredError": "Please enter a valid email and password (at least 6 characters).",
+    "signUpSuccess": "Account created successfully!",
+    "unauthorizedDomainError": "Email sign-in is not configured properly in Supabase.",
+    "providerDisabledError": "Email sign-in is not enabled in Supabase Authentication settings.",
+    "signInFailedError": "Could not sign in ({{code}}). Please check your email and password and try again."
+  },
+  "profile": {
+    "setupTitle": "Customize your account",
+    "setupSubtitle": "Set your name, languages, and upcoming visits so your kit feels yours from day one.",
+    "editTitle": "Customize your account",
+    "editButton": "Customize account",
+    "displayNameLabel": "Name to show on your kit (optional)",
+    "displayNamePlaceholder": "e.g., Rosa or Mrs. Morales",
+    "roleLabel": "Who is preparing today?",
+    "roleParent": "I am the parent or guardian",
+    "roleHelper": "I am a teen or family member helping",
+    "roleTogether": "We are preparing side by side",
+    "focusVisitsLabel": "Which visits are coming up? (optional)",
+    "languagesHeading": "Your languages",
+    "saveButton": "Save my account",
+    "savingButton": "Saving...",
+    "skipButton": "Skip for now",
+    "savedConfirm": "Account settings saved.",
+    "saveError": "Could not save your settings right now. Please try again.",
+    "focusTag": "Your focus",
+    "welcomeName": "Welcome, {{name}}"
+  },
+  "nav": {
+    "home": "Home",
+    "words": "My words",
+    "interpreter": "Interpreter card",
+    "cheatSheet": "Cheat sheet",
+    "progress": "My progress"
+  },
+  "home": {
+    "promise": "Walk into your next meeting ready—your child beside you as support, never the interpreter.",
+    "helperNote": "Designed for a parent and a teen helper to read side by side.",
+    "chooseVisit": "Choose a visit to prepare for",
+    "startWalkthrough": "Prepare step by step",
+    "practiceQuestions": "Practice questions",
+    "quickToolsHeading": "Tools for the visit",
+    "myWordsDesc": "Save important words in both languages and mark the ones you know.",
+    "myProgressDesc": "See the words and questions you have prepared so far.",
+    "interpreterCardTitle": "Interpreter request card",
+    "interpreterCardDesc": "Show a clear, full-screen request for a professional interpreter.",
+    "cheatSheetTitle": "One-page cheat sheet",
+    "cheatSheetDesc": "Print your chosen questions, words, and interpreter card on one A4 sheet.",
+    "buildScenarioTitle": "Build my own scenario",
+    "buildScenarioDesc": "Describe a different meeting and create a simple 4-step prep guide."
+  },
+  "ai": {
+    "disclaimer": "Made by AI. Machine translation may contain mistakes. Please check important words with someone you trust.",
+    "buildTitle": "Build my own scenario",
+    "buildSubtitle": "Describe a visit you have coming up. We will create 4 preparation steps, practice questions, and key words.",
+    "languageSelectLabel": "Language for your guide",
+    "descriptionLabel": "What kind of visit is this?",
+    "descriptionPlaceholder": "Example: meeting with my child's counselor",
+    "descriptionRequired": "Please type a short description of your visit first.",
+    "generateButton": "Build my guide",
+    "generating": "Creating your visit guide...",
+    "errorGeneric": "We could not create a guide for that request. Please try describing a school, clinic, bank, or community visit in simple words.",
+    "saveWordsButton": "Save these words to My words",
+    "wordsSavedConfirm": "Words saved to My words.",
+    "printCheatSheet": "Print cheat sheet",
+    "startOver": "Start over",
+    "questionsHeading": "Practice questions for this visit",
+    "wordsHeading": "Key words for this visit",
+    "explainSimply": "Explain simply",
+    "explaining": "Getting a simple meaning...",
+    "hideExplanation": "Hide explanation",
+    "meaningLabel": "Simple meaning",
+    "exampleLabel": "Example",
+    "explainError": "Could not explain this word right now. Try again when online."
+  },
+  "scenarios": {
+    "school": {
+      "title": "Parent-teacher meeting",
+      "shortTitle": "School meeting",
+      "summary": "Know what happens in a school conference, who attends, and what questions to bring.",
+      "roleTag": "School · 4 steps",
+      "steps": {
+        "whatHappens": {
+          "title": "What will happen",
+          "body": "You will sit with the teacher to hear how your child is doing in class, see recent schoolwork, and agree on one or two next steps. You can ask the teacher to slow down or explain any school term.",
+          "tip": "Your teenager can sit beside you to help track notes, while you lead the talk."
+        },
+        "whoIsThere": {
+          "title": "Who will be there",
+          "body": "Usually your child's teacher, you, and sometimes a school counselor or a professional interpreter if requested ahead of time. You are the parent and decision-maker.",
+          "tip": "Your child is your supporter, not the interpreter for sensitive or official school topics."
+        },
+        "howLong": {
+          "title": "How long it takes",
+          "body": "Most parent-teacher meetings last 15 to 20 minutes. Arrive 10 minutes early to find the classroom or sign in at the front office.",
+          "tip": "If you need more time, you can ask to schedule a follow-up talk."
+        },
+        "whatToBring": {
+          "title": "What to bring",
+          "body": "Bring the items below so you do not have to search at the desk.",
+          "items": [
+            "The meeting invite letter or note",
+            "A pen and small notebook",
+            "Two questions you want to ask",
+            "Your interpreter request card (on your phone or printed)"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "What is my child doing well in right now?",
+        "q2": "Where does my child need extra support?",
+        "q3": "What can we practice at home for 15 minutes a day?",
+        "q4": "Who should I contact if I have a question later?",
+        "q5": "Can you send important notes home in my language?"
+      },
+      "words": {
+        "w1": "Report card",
+        "w2": "Attendance",
+        "w3": "Homework",
+        "w4": "Parent-teacher conference"
+      }
+    },
+    "clinic": {
+      "title": "Clinic visit (preparation only)",
+      "shortTitle": "Clinic visit",
+      "summary": "Prepare for check-in, paperwork, and asking for an interpreter—no medical advice.",
+      "roleTag": "Preparation & rights · 4 steps",
+      "disclaimer": "This guide covers visit preparation and communication rights only. It does not give medical advice.",
+      "steps": {
+        "whatHappens": {
+          "title": "What will happen",
+          "body": "First, you check in at the front desk and confirm your name and address. Next, a staff member calls you in for basic intake questions before you speak with the clinician.",
+          "tip": "You can ask for a professional medical interpreter at check-in so nothing is misunderstood."
+        },
+        "whoIsThere": {
+          "title": "Who will be there",
+          "body": "Front-desk staff, a nurse or medical assistant, the doctor or nurse practitioner, and a professional interpreter (in person, by phone, or by video).",
+          "tip": "Your child should never have to translate health conversations. Ask for a trained interpreter."
+        },
+        "howLong": {
+          "title": "How long it takes",
+          "body": "Plan for 45 to 60 minutes total, including waiting time and check-out paperwork. Arrive 15 minutes early if you are filling out forms for the first time.",
+          "tip": "Ask for written instructions before you leave the room."
+        },
+        "whatToBring": {
+          "title": "What to bring",
+          "body": "Pack these documents before you leave home.",
+          "items": [
+            "Photo ID and appointment reminder",
+            "Insurance card or clinic card (if you have one)",
+            "Names or photos of any current medicine bottles",
+            "Your interpreter request card"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "May I have a professional interpreter for this visit?",
+        "q2": "Can you please write down the next steps clearly?",
+        "q3": "When and where is my follow-up appointment?",
+        "q4": "Which phone number should I call if I have a question about paperwork?",
+        "q5": "Are these forms available in my language?"
+      },
+      "words": {
+        "w1": "Appointment",
+        "w2": "Prescription",
+        "w3": "Check-in desk",
+        "w4": "Follow-up visit"
+      }
+    },
+    "bank": {
+      "title": "Bank or official letter",
+      "shortTitle": "Bank or official",
+      "summary": "Prepare for bank appointments, government offices, or confusing mail without guessing.",
+      "roleTag": "Official desk · 4 steps",
+      "steps": {
+        "whatHappens": {
+          "title": "What will happen",
+          "body": "A clerk or advisor will check your identity, read your letter or account details, and explain what action or document is needed. Never sign a paper you do not understand.",
+          "tip": "It is completely normal to say: I want to take this home to read carefully first."
+        },
+        "whoIsThere": {
+          "title": "Who will be there",
+          "body": "A front-desk greeter, a bank representative or caseworker, and a language interpreter by phone or in person if available.",
+          "tip": "Your teen helper can help keep your papers in order, while you speak with the staff and approve decisions."
+        },
+        "howLong": {
+          "title": "How long it takes",
+          "body": "Allow 30 to 45 minutes. If you do not have an appointment, waiting times can be longer—morning hours are often quieter.",
+          "tip": "Ask for a printed receipt or reference number before leaving."
+        },
+        "whatToBring": {
+          "title": "What to bring",
+          "body": "Keep important letters and IDs together in one folder.",
+          "items": [
+            "The official letter and its envelope",
+            "Government-issued photo ID",
+            "Proof of address (a recent utility bill or lease)",
+            "Your interpreter request card"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "What is the exact deadline on this letter?",
+        "q2": "Which documents do I still need to bring?",
+        "q3": "Can I take a copy home to review before I sign?",
+        "q4": "Can you write down my confirmation or reference number?",
+        "q5": "Is there a fee or penalty I should know about?"
+      },
+      "words": {
+        "w1": "Proof of address",
+        "w2": "Deadline",
+        "w3": "Reference number",
+        "w4": "Signature"
+      }
+    }
+  },
+  "walkthrough": {
+    "helperViewToggle": "Show local language helper text",
+    "goToQuestions": "Practice questions",
+    "openInterpreterCard": "Interpreter card",
+    "checklistHeading": "Checklist"
+  },
+  "questions": {
+    "title": "Practice questions",
+    "subtitle": "Read these questions before your visit. Tap Got it when you feel comfortable asking or showing one.",
+    "gotIt": "Got it",
+    "gotItDone": "Practiced",
+    "includeOnSheet": "Add to cheat sheet",
+    "includedOnSheet": "On cheat sheet",
+    "practicedCount": "{{count}} of {{total}} practiced",
+    "nextInterpreter": "View interpreter card",
+    "nextCheatSheet": "Open printable cheat sheet"
+  },
+  "words": {
+    "title": "My words",
+    "subtitle": "Keep helpful words in both languages. Mark each word when you feel confident using it.",
+    "filterAll": "All visits",
+    "addHeading": "Add your own word",
+    "addHint": "Type a word in either box and tap Translate, or enter both yourself.",
+    "yourWordLabel": "Word in {{language}}",
+    "yourWordPlaceholder": "e.g., Recibo",
+    "localWordLabel": "Word in {{language}}",
+    "localWordPlaceholder": "e.g., Receipt",
+    "translateError": "Could not translate that word right now. You can still type both words yourself.",
+    "categoryLabel": "Visit type",
+    "categoryGeneral": "General",
+    "addButton": "Save word",
+    "validationError": "Please enter the word in both languages.",
+    "knowNow": "I know this now",
+    "knownState": "I know this",
+    "removeWord": "Remove",
+    "emptyState": "No words in this list yet. Add a word above to start building your kit.",
+    "summaryCount": "{{known}} of {{total}} words known"
+  },
+  "interpreterCard": {
+    "title": "Interpreter request card",
+    "subtitle": "Show this screen at the desk or print it to carry in your wallet or folder.",
+    "phraseText": "I would like a professional interpreter, please.",
+    "preferredLangTemplate": "My preferred language is: {{language}}",
+    "helperNoteText": "My child is here to support me, not to act as an interpreter.",
+    "phraseLocal": "I would like a professional interpreter, please.",
+    "phraseUser": "I would like a professional interpreter, please.",
+    "languageNoteLocal": "My preferred language is: English",
+    "languageNoteUser": "My preferred language is: English",
+    "helperNoteLocal": "My child is here to support me, not to act as an interpreter.",
+    "enterFullscreen": "Show full screen",
+    "exitFullscreen": "Exit full screen",
+    "printCard": "Print this card",
+    "rightsHeading": "About your right to an interpreter",
+    "rightsBody": "Rules for free professional interpreters vary by country, region, and type of office (schools, public clinics, hospitals, or banks). In many places, public schools and health services must provide an interpreter at no cost.",
+    "placeholderLabel": "Country-specific info to verify",
+    "placeholderText": "[Placeholder: Add your country or city's interpreter rights rule, local language access hotline, or community legal aid number before sharing locally.]"
+  },
+  "cheatSheet": {
+    "title": "My visit cheat sheet",
+    "subtitle": "Prints cleanly in black and white on one A4 page. Take it with you or hand it to your teen helper.",
+    "createdOn": "Prepared on {{date}}",
+    "preparedFor": "Prepared for {{name}}",
+    "filterLabel": "Focus visit",
+    "allVisits": "All visits",
+    "printButton": "Print A4 cheat sheet",
+    "sectionPhrases": "Key phrases",
+    "sectionQuestions": "My chosen questions",
+    "sectionWords": "My saved words",
+    "sectionInterpreter": "Interpreter request card",
+    "noChosenQuestionsNote": "Showing starter questions. You can pick specific ones on any Practice questions page.",
+    "generalPhrases": [
+      "Please speak a little slower.",
+      "Could you write that down for me?",
+      "I want to read this carefully before I sign.",
+      "My child is here to support me, not to interpret."
+    ]
+  },
+  "progress": {
+    "title": "My progress",
+    "subtitle": "Every word and question you prepare makes your child less needed at the desk.",
+    "headlineGrowing": "You're doing more on your own",
+    "headlineStarting": "Your visit kit is ready whenever you are",
+    "headlineSteady": "You are walking in well prepared",
+    "wordsKnownLabel": "Words I know",
+    "wordsSummary": "{{known}} of {{total}} saved words",
+    "questionsAskedLabel": "Questions I practiced",
+    "questionsSummary": "{{practiced}} of {{total}} visit questions",
+    "gentleMessageStart": "Start with one visit or three words. Small steps build calm confidence.",
+    "gentleMessageGrowing": "You are building your own voice for meetings. Keep going at your own pace.",
+    "gentleMessageStrong": "You have a strong set of words and questions ready. Your child can simply stand beside you.",
+    "nextStepTitle": "Keep preparing",
+    "practiceMoreWords": "Review My words",
+    "printYourSheet": "Print your A4 cheat sheet"
+  }
+}

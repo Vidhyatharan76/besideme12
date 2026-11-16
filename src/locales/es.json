@@ -1,0 +1,385 @@
+{
+  "_meta": {
+    "code": "es",
+    "nativeName": "Español",
+    "englishName": "Spanish",
+    "dir": "ltr",
+    "status": "reviewed",
+    "needsReview": false
+  },
+  "common": {
+    "appName": "Beside Me",
+    "appSubtitle": "Guía familiar para citas y trámites",
+    "footerPrivacy": "Inicia sesión para abrir tu guía familiar privada.",
+    "footerPrivacySignedIn": "Tus palabras y progreso se guardan de forma privada en tu cuenta.",
+    "skipToMain": "Ir al contenido principal",
+    "languageLabel": "Elige tu idioma",
+    "myLanguageLabel": "Mi idioma",
+    "localLanguageLabel": "Idioma local",
+    "searchLanguagePlaceholder": "Buscar idioma (ej., Árabe, English, 日本語)",
+    "reviewedLabel": "Revisado",
+    "machineTranslatedNotice": "Traducido automáticamente. Verifica las palabras importantes con alguien de confianza.",
+    "translationOfflineFallback": "No se pudo traducir ahora. Mostrando texto en inglés para que no pierdas nada.",
+    "noLanguagesFound": "No se encontraron idiomas",
+    "translateWordButton": "Traducir",
+    "translatingWord": "Traduciendo...",
+    "selectLanguagesButton": "Idiomas",
+    "localLanguageName": "Inglés",
+    "needsReviewNotice": "",
+    "offlineBanner": "Modo sin conexión — guardado en este dispositivo y listo para usar.",
+    "installApp": "Guardar en pantalla de inicio",
+    "iosInstallTitle": "Guardar Beside Me en tu iPhone o iPad",
+    "iosInstallStep1": "Toca el botón Compartir en Safari.",
+    "iosInstallStep2": "Desliza hacia abajo y toca Agregar a inicio.",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "stepCounter": "Paso {{current}} de {{total}}",
+    "resetData": "Borrar datos guardados",
+    "resetConfirm": "Datos borrados. Todo comienza desde cero.",
+    "print": "Imprimir",
+    "inLocalLanguage": "En {{language}} (para mostrar)",
+    "inYourLanguage": "En {{language}}"
+  },
+  "auth": {
+    "needsReview": true,
+    "signIn": "Registrarse o iniciar sesión con Google",
+    "signOut": "Cerrar sesión",
+    "signedInAs": "Sesión iniciada como {{email}}",
+    "signInHint": "Tus palabras, preguntas practicadas y ajustes se guardan de forma privada en tu cuenta.",
+    "syncing": "Guardando cambios...",
+    "syncError": "No pudimos conectar con tu cuenta ahora. Los cambios quedan en este dispositivo.",
+    "gateTitle": "Regístrate o inicia sesión para abrir Beside Me",
+    "gateSubtitle": "Elige tus idiomas primero y luego continúa con Google. Si es tu primera vez, crearemos tu cuenta al instante para personalizar tu guía.",
+    "gateBenefit1": "Guarda tus palabras, preguntas y lista de preparación de forma privada en cualquier dispositivo.",
+    "gateBenefit2": "Personaliza tu nombre, tu rol familiar y las próximas citas en escuela, clínica o banco.",
+    "gateBenefit3": "Prepárate junto a tu hijo o hija como apoyo, nunca como intérprete.",
+    "continueWithGoogle": "Continuar con Google",
+    "signingIn": "Abriendo inicio de sesión...",
+    "loadingAccount": "Verificando tu cuenta...",
+    "popupBlockedError": "Tu navegador bloqueó la ventana de inicio de sesión. Permite las ventanas emergentes e inténtalo de nuevo.",
+    "popupClosedError": "Se canceló el inicio de sesión. Toca Continuar con Google cuando estés listo.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "ej., padre@example.com",
+    "passwordLabel": "Contraseña (al menos 6 caracteres)",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Iniciar sesión",
+    "signUpButton": "Crear cuenta",
+    "modeSwitchToSignUp": "¿No tienes cuenta? Regístrate",
+    "modeSwitchToSignIn": "¿Ya tienes cuenta? Inicia sesión",
+    "emailRequiredError": "Por favor ingresa un correo y contraseña válidos (al menos 6 caracteres).",
+    "signUpSuccess": "¡Cuenta creada con éxito!",
+    "unauthorizedDomainError": "El inicio de sesión por correo no está configurado en Supabase.",
+    "providerDisabledError": "El acceso por correo no está activado en la autenticación de Supabase.",
+    "signInFailedError": "No se pudo iniciar sesión ({{code}}). Revisa tus datos e inténtalo de nuevo."
+  },
+  "profile": {
+    "setupTitle": "Personaliza tu cuenta",
+    "setupSubtitle": "Elige tu nombre, tus idiomas y las próximas citas para adaptar tu guía desde el inicio.",
+    "editTitle": "Personaliza tu cuenta",
+    "editButton": "Personalizar cuenta",
+    "displayNameLabel": "Nombre para mostrar en tu guía (opcional)",
+    "displayNamePlaceholder": "ej., Rosa o Sra. Morales",
+    "roleLabel": "¿Quién se prepara hoy?",
+    "roleParent": "Soy madre, padre o tutor",
+    "roleHelper": "Soy adolescente o familiar que apoya",
+    "roleTogether": "Nos preparamos juntos",
+    "focusVisitsLabel": "¿Qué citas tienes pronto? (opcional)",
+    "languagesHeading": "Tus idiomas",
+    "saveButton": "Guardar mi cuenta",
+    "savingButton": "Guardando...",
+    "skipButton": "Omitir por ahora",
+    "savedConfirm": "Configuración de cuenta guardada.",
+    "saveError": "No pudimos guardar tu configuración ahora. Inténtalo de nuevo.",
+    "focusTag": "Tu enfoque",
+    "welcomeName": "Bienvenido/a, {{name}}"
+  },
+  "nav": {
+    "needsReview": true,
+    "home": "Inicio",
+    "words": "Mis palabras",
+    "interpreter": "Tarjeta intérprete",
+    "cheatSheet": "Hoja resumen",
+    "progress": "Mi progreso"
+  },
+  "home": {
+    "needsReview": true,
+    "promise": "Llega a tu próxima cita con seguridad: tu hijo o hija te acompaña como apoyo, nunca como intérprete.",
+    "helperNote": "Pensado para que padre o madre y adolescente lean juntos.",
+    "chooseVisit": "Elige una cita para preparar",
+    "startWalkthrough": "Preparar paso a paso",
+    "practiceQuestions": "Practicar preguntas",
+    "quickToolsHeading": "Herramientas para la visita",
+    "myWordsDesc": "Guarda palabras útiles en ambos idiomas y marca las que ya sabes.",
+    "myProgressDesc": "Mira las palabras y preguntas que ya preparaste.",
+    "interpreterCardTitle": "Tarjeta para pedir intérprete",
+    "interpreterCardDesc": "Muestra en pantalla completa una solicitud clara de intérprete profesional.",
+    "cheatSheetTitle": "Hoja resumen para imprimir",
+    "cheatSheetDesc": "Imprime tus preguntas, palabras y tarjeta de intérprete en una página A4.",
+    "buildScenarioTitle": "Crear mi propia situación",
+    "buildScenarioDesc": "Describe otra cita y crea una guía sencilla de 4 pasos para prepararte."
+  },
+  "ai": {
+    "needsReview": true,
+    "disclaimer": "Creado con IA. La traducción automática puede tener errores. Verifica las palabras importantes con alguien de confianza.",
+    "buildTitle": "Crear mi propia situación",
+    "buildSubtitle": "Describe la cita que vas a tener. Crearemos 4 pasos de preparación, preguntas para practicar y palabras clave.",
+    "languageSelectLabel": "Idioma para tu guía",
+    "descriptionLabel": "¿Qué tipo de cita o reunión es?",
+    "descriptionPlaceholder": "Ejemplo: reunión con la consejera escolar de mi hijo",
+    "descriptionRequired": "Por favor escribe una breve descripción de tu visita primero.",
+    "generateButton": "Crear mi guía",
+    "generating": "Creando tu guía de visita...",
+    "errorGeneric": "No pudimos crear una guía para esa solicitud. Intenta describir una visita escolar, clínica, bancaria o comunitaria con palabras sencillas.",
+    "saveWordsButton": "Guardar estas palabras en Mis palabras",
+    "wordsSavedConfirm": "Palabras guardadas en Mis palabras en este dispositivo.",
+    "printCheatSheet": "Imprimir hoja resumen",
+    "startOver": "Empezar de nuevo",
+    "questionsHeading": "Preguntas para practicar en esta visita",
+    "wordsHeading": "Palabras clave para esta visita",
+    "explainSimply": "Explicar fácil",
+    "explaining": "Buscando una explicación sencilla...",
+    "hideExplanation": "Ocultar explicación",
+    "meaningLabel": "Significado sencillo",
+    "exampleLabel": "Ejemplo",
+    "explainError": "No pudimos explicar esta palabra ahora. Inténtalo cuando tengas conexión."
+  },
+  "scenarios": {
+    "needsReview": true,
+    "school": {
+      "title": "Reunión con el maestro o maestra",
+      "shortTitle": "Reunión escolar",
+      "summary": "Conoce qué pasa en una reunión escolar, quién asiste y qué preguntas llevar.",
+      "roleTag": "Escuela · 4 pasos",
+      "steps": {
+        "whatHappens": {
+          "title": "Qué va a pasar",
+          "body": "Te sentarás con el maestro o la maestra para escuchar cómo va tu hijo o hija en clase, ver trabajos recientes y acordar uno o dos pasos siguientes. Puedes pedir que hablen más despacio o que expliquen cualquier término escolar.",
+          "tip": "Tu adolescente puede sentarse a tu lado para ayudar a anotar, mientras tú diriges la reunión."
+        },
+        "whoIsThere": {
+          "title": "Quién estará presente",
+          "body": "Por lo general estará el maestro o la maestra, tú y a veces un consejero escolar o un intérprete profesional si se pidió con anticipación. Tú eres quien toma las decisiones.",
+          "tip": "Tu hijo o hija es tu apoyo, no quien debe interpretar temas escolares importantes."
+        },
+        "howLong": {
+          "title": "Cuánto dura",
+          "body": "La mayoría de las reuniones escolares duran de 15 a 20 minutos. Llega 10 minutos antes para encontrar el salón o registrarte en la oficina.",
+          "tip": "Si necesitas más tiempo, puedes pedir otra reunión de seguimiento."
+        },
+        "whatToBring": {
+          "title": "Qué llevar",
+          "body": "Lleva estos artículos para tener todo a la mano.",
+          "items": [
+            "La carta o nota de invitación a la reunión",
+            "Un bolígrafo y una libreta pequeña",
+            "Dos preguntas que quieras hacer",
+            "Tu tarjeta para pedir intérprete (en el teléfono o impresa)"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "¿En qué está avanzando bien mi hijo o hija ahora?",
+        "q2": "¿En qué área necesita apoyo adicional?",
+        "q3": "¿Qué podemos practicar en casa 15 minutos al día?",
+        "q4": "¿Con quién me comunico si tengo otra pregunta después?",
+        "q5": "¿Pueden enviar las notas importantes a casa en mi idioma?"
+      },
+      "words": {
+        "w1": "Boleta de calificaciones",
+        "w2": "Asistencia",
+        "w3": "Tarea",
+        "w4": "Reunión de padres y maestros"
+      }
+    },
+    "clinic": {
+      "title": "Cita en la clínica (solo preparación)",
+      "shortTitle": "Cita en la clínica",
+      "summary": "Prepárate para el registro, los formularios y pedir intérprete — sin consejos médicos.",
+      "roleTag": "Preparación y derechos · 4 pasos",
+      "disclaimer": "Esta guía cubre solo la preparación de la visita y tus derechos de comunicación. No ofrece consejos médicos.",
+      "steps": {
+        "whatHappens": {
+          "title": "Qué va a pasar",
+          "body": "Primero te registras en recepción y confirmas tu nombre y dirección. Después te llaman para preguntas iniciales antes de hablar con el profesional de salud.",
+          "tip": "Puedes pedir un intérprete médico profesional al registrarte para evitar confusiones."
+        },
+        "whoIsThere": {
+          "title": "Quién estará presente",
+          "body": "Personal de recepción, enfermería o asistente médico, el médico o profesional de salud, y un intérprete profesional (en persona, por teléfono o por video).",
+          "tip": "Tu hijo o hija nunca debería traducir conversaciones de salud. Pide un intérprete capacitado."
+        },
+        "howLong": {
+          "title": "Cuánto dura",
+          "body": "Calcula entre 45 y 60 minutos en total, incluyendo espera y salida. Llega 15 minutos antes si es tu primera vez llenando formularios.",
+          "tip": "Pide instrucciones por escrito antes de salir del consultorio."
+        },
+        "whatToBring": {
+          "title": "Qué llevar",
+          "body": "Prepara estos documentos antes de salir de casa.",
+          "items": [
+            "Identificación con foto y recordatorio de la cita",
+            "Tarjeta del seguro o tarjeta de la clínica (si tienes)",
+            "Nombres o fotos de los envases de medicinas actuales",
+            "Tu tarjeta para pedir intérprete"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "¿Puedo contar con un intérprete profesional para esta cita?",
+        "q2": "¿Puede escribir los siguientes pasos con letra clara?",
+        "q3": "¿Cuándo y dónde es mi próxima cita de control?",
+        "q4": "¿A qué número llamo si tengo dudas sobre los formularios?",
+        "q5": "¿Tienen estos formularios en mi idioma?"
+      },
+      "words": {
+        "w1": "Cita",
+        "w2": "Receta médica",
+        "w3": "Mostrador de registro",
+        "w4": "Cita de seguimiento"
+      }
+    },
+    "bank": {
+      "title": "Banco o carta oficial",
+      "shortTitle": "Banco o trámite",
+      "summary": "Prepárate para citas en el banco, oficinas públicas o cartas difíciles sin adivinar.",
+      "roleTag": "Trámite oficial · 4 pasos",
+      "steps": {
+        "whatHappens": {
+          "title": "Qué va a pasar",
+          "body": "Un empleado o asesor revisará tu identificación, leerá tu carta o cuenta y explicará qué documento o paso hace falta. Nunca firmes un papel que no entiendas.",
+          "tip": "Es totalmente válido decir: Quiero llevar esto a casa para leerlo con calma primero."
+        },
+        "whoIsThere": {
+          "title": "Quién estará presente",
+          "body": "Personal de bienvenida, un representante del banco o trabajador del caso, y un intérprete por teléfono o en persona si está disponible.",
+          "tip": "Tu adolescente puede ayudarte a mantener los papeles en orden, mientras tú hablas y decides."
+        },
+        "howLong": {
+          "title": "Cuánto dura",
+          "body": "Reserva de 30 a 45 minutos. Si vas sin cita, la espera puede ser más larga; las primeras horas de la mañana suelen ser más tranquilas.",
+          "tip": "Pide un comprobante impreso o número de referencia antes de irte."
+        },
+        "whatToBring": {
+          "title": "Qué llevar",
+          "body": "Guarda cartas importantes e identificaciones juntas en una carpeta.",
+          "items": [
+            "La carta oficial y su sobre",
+            "Identificación oficial con foto",
+            "Comprobante de domicilio (recibo reciente o contrato)",
+            "Tu tarjeta para pedir intérprete"
+          ]
+        }
+      },
+      "questions": {
+        "q1": "¿Cuál es la fecha límite exacta de esta carta?",
+        "q2": "¿Qué documentos todavía necesito traer?",
+        "q3": "¿Puedo llevar una copia a casa para revisarla antes de firmar?",
+        "q4": "¿Puede anotar mi número de confirmación o referencia?",
+        "q5": "¿Hay algún cargo o multa que deba conocer?"
+      },
+      "words": {
+        "w1": "Comprobante de domicilio",
+        "w2": "Fecha límite",
+        "w3": "Número de referencia",
+        "w4": "Firma"
+      }
+    }
+  },
+  "walkthrough": {
+    "helperViewToggle": "Mostrar texto de apoyo en el idioma local",
+    "goToQuestions": "Practicar preguntas",
+    "openInterpreterCard": "Tarjeta intérprete",
+    "checklistHeading": "Lista para llevar"
+  },
+  "questions": {
+    "needsReview": true,
+    "title": "Practicar preguntas",
+    "subtitle": "Lee estas preguntas antes de tu cita. Toca Lo tengo cuando te sientas cómodo haciéndola o mostrándola.",
+    "gotIt": "Lo tengo",
+    "gotItDone": "Practicada",
+    "includeOnSheet": "Agregar a hoja",
+    "includedOnSheet": "En la hoja",
+    "practicedCount": "{{count}} de {{total}} practicadas",
+    "nextInterpreter": "Ver tarjeta de intérprete",
+    "nextCheatSheet": "Abrir hoja resumen"
+  },
+  "words": {
+    "title": "Mis palabras",
+    "subtitle": "Guarda palabras útiles en ambos idiomas. Marca cada palabra cuando ya te sientas seguro usándola.",
+    "filterAll": "Todas las citas",
+    "addHeading": "Agrega tu propia palabra",
+    "addHint": "Escribe una palabra en cualquiera de los campos y toca Traducir, o escribe ambos.",
+    "yourWordLabel": "Palabra en {{language}}",
+    "yourWordPlaceholder": "ej., Recibo",
+    "localWordLabel": "Palabra en {{language}}",
+    "localWordPlaceholder": "ej., Receipt",
+    "translateError": "No se pudo traducir esa palabra ahora. Aún puedes escribir ambas palabras.",
+    "categoryLabel": "Tipo de cita",
+    "categoryGeneral": "General",
+    "addButton": "Guardar palabra",
+    "validationError": "Por favor escribe la palabra en ambos idiomas.",
+    "knowNow": "Ya la sé",
+    "knownState": "Ya la sé",
+    "removeWord": "Quitar",
+    "emptyState": "Todavía no hay palabras en esta lista. Agrega una arriba para empezar.",
+    "summaryCount": "{{known}} de {{total}} palabras aprendidas"
+  },
+  "interpreterCard": {
+    "title": "Tarjeta para pedir intérprete",
+    "subtitle": "Muestra esta pantalla en la recepción o imprímela para llevarla en tu carpeta.",
+    "phraseText": "Quisiera un intérprete profesional, por favor.",
+    "preferredLangTemplate": "Mi idioma preferido es: {{language}}",
+    "helperNoteText": "Mi hijo o hija está aquí para apoyarme, no para actuar como intérprete.",
+    "phraseLocal": "I would like a professional interpreter, please.",
+    "phraseUser": "Quisiera un intérprete profesional, por favor.",
+    "languageNoteLocal": "My preferred language is: Spanish (Español)",
+    "languageNoteUser": "Mi idioma preferido es: Español",
+    "helperNoteLocal": "My child is here to support me, not to act as an interpreter.",
+    "enterFullscreen": "Ver en pantalla completa",
+    "exitFullscreen": "Salir de pantalla completa",
+    "printCard": "Imprimir tarjeta",
+    "rightsHeading": "Sobre tu derecho a un intérprete",
+    "rightsBody": "Las reglas sobre intérpretes profesionales gratuitos varían según el país, la región y el tipo de oficina (escuelas, clínicas públicas, hospitales o bancos). En muchos lugares, las escuelas y servicios públicos de salud deben ofrecer un intérprete sin costo.",
+    "placeholderLabel": "Información local por verificar",
+    "placeholderText": "[Espacio por completar: Agrega aquí la norma de tu país o ciudad sobre derecho a intérprete, teléfono de apoyo o ayuda legal local antes de distribuir.]"
+  },
+  "cheatSheet": {
+    "title": "Mi hoja resumen para la cita",
+    "subtitle": "Se imprime claro en blanco y negro en una sola página A4. Llévala contigo o dásela a tu hijo o hija como apoyo.",
+    "createdOn": "Preparado el {{date}}",
+    "preparedFor": "Preparado para {{name}}",
+    "filterLabel": "Cita a preparar",
+    "allVisits": "Todas las citas",
+    "printButton": "Imprimir hoja A4",
+    "sectionPhrases": "Frases clave",
+    "sectionQuestions": "Mis preguntas elegidas",
+    "sectionWords": "Mis palabras guardadas",
+    "sectionInterpreter": "Tarjeta para pedir intérprete",
+    "noChosenQuestionsNote": "Mostrando preguntas iniciales. Puedes elegir otras en Practicar preguntas.",
+    "generalPhrases": [
+      "Por favor hable un poco más despacio.",
+      "¿Me lo puede escribir, por favor?",
+      "Quiero leer esto con calma antes de firmar.",
+      "Mi hijo o hija está aquí para apoyarme, no para interpretar."
+    ]
+  },
+  "progress": {
+    "needsReview": true,
+    "title": "Mi progreso",
+    "subtitle": "Cada palabra y pregunta que preparas hace que dependas menos de tu hijo o hija en el mostrador.",
+    "headlineGrowing": "Cada vez haces más por tu cuenta",
+    "headlineStarting": "Tu guía está lista cuando tú lo estés",
+    "headlineSteady": "Vas a tu cita bien preparado",
+    "wordsKnownLabel": "Palabras que ya sé",
+    "wordsSummary": "{{known}} de {{total}} palabras guardadas",
+    "questionsAskedLabel": "Preguntas que practiqué",
+    "questionsSummary": "{{practiced}} de {{total}} preguntas de visita",
+    "gentleMessageStart": "Empieza con una cita o tres palabras. Cada paso pequeño da tranquilidad.",
+    "gentleMessageGrowing": "Estás construyendo tu propia voz para tus reuniones. Sigue a tu ritmo.",
+    "gentleMessageStrong": "Ya tienes un buen grupo de palabras y preguntas listas. Tu hijo o hija solo tiene que acompañarte.",
+    "nextStepTitle": "Seguir preparando",
+    "practiceMoreWords": "Repasar Mis palabras",
+    "printYourSheet": "Imprimir tu hoja A4"
+  }
+}
