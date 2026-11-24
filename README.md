@@ -55,8 +55,19 @@ A mobile-first, dark-mode, offline-ready web application helping immigrant famil
    NODE_ENV=production npm start
    ```
 
-## AI-Generated Content Disclosure
+## AI Tools & Acknowledgements
 
-- **Human-reviewed static copy**: `/src/locales/en.json` and `/src/locales/es.json` are marked `"status": "reviewed"`.
-- **Machine-translated languages & AI features**: Additional languages, "Build my own scenario", and "Explain simply" are powered by Gemini on the server and clearly labeled with an AI translation/disclaimer notice.
-- **Country-specific interpreter rights placeholder**: `/src/pages/InterpreterCardPage.tsx` and locale files contain a clearly marked local-verification placeholder.
+AI tools played a role in the design and development of Beside Me.
+
+### Tools Used
+
+- **[v0](https://v0.dev/)** — Used to generate the application's UI and interface components.
+- **[Google Gemini](https://gemini.google.com/)** — Used as a coding assistant for implementation guidance, code suggestions, debugging, and development support.
+- **Google Gemini API** — Powers AI-driven features within Beside Me, including custom scenario generation, vocabulary categorisation, and the "Explain Simply" functionality.
+
+### AI Usage Disclosure
+
+The user interface was generated using v0, while Gemini assisted with coding and also powers selected AI features in the application.
+
+The generated code and AI-assisted implementations were integrated, reviewed, tested, and refined as part of the development process. The development team takes responsibility for understanding the final implementation and its functionality.
+
