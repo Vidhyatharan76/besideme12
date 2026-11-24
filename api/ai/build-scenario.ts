@@ -243,16 +243,51 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
         },
       });
 
+    const isFallbackable = (err: unknown) => {
+      const status =
+        typeof err === 'object' && err !== null && 'status' in err
+          ? Number((err as { status?: unknown }).status)
+          : NaN;
+      if (status === 404 || status === 429 || status === 500 || status === 503) return true;
+      const msg = (err instanceof Error ? err.message : String(err)).toUpperCase();
+      return (
+        msg.includes('503') ||
+        msg.includes('429') ||
+        msg.includes('500') ||
+        msg.includes('404') ||
+        msg.includes('UNAVAILABLE') ||
+        msg.includes('RESOURCE_EXHAUSTED') ||
+        msg.includes('INTERNAL') ||
+        msg.includes('NOT_FOUND') ||
+        msg.includes('NOT FOUND') ||
+        msg.includes('HIGH DEMAND') ||
+        msg.includes('OVERLOADED')
+      );
+    };
+
+    const models = [
+      'gemini-4-hydrogen',
+      'gemini-3.1-flash-lite',
+      'gemini-2.5-flash',
+      'gemini-3.1-flash-lite',
+      'gemini-2.5-flash',
+    ];
     let response;
-    try {
-      response = await callModel('gemini-4-hydrogen');
-    } catch (err: unknown) {
-      const msg = err instanceof Error ? err.message : String(err);
-      if (msg.includes('404') || msg.includes('NOT_FOUND') || msg.includes('not found')) {
-        response = await callModel('gemini-2.5-flash');
-      } else {
-        throw err;
+    let lastError: unknown;
+    for (let i = 0; i < models.length; i++) {
+      try {
+        response = await callModel(models[i]);
+        break;
+      } catch (err: unknown) {
+        lastError = err;
+        if (!isFallbackable(err) || i === models.length - 1) {
+          throw err;
+        }
+        await new Promise((resolve) => setTimeout(resolve, i < 2 ? 250 : 750));
       }
+    }
+    if (!response) {
+      throw lastError;
     }
 
     const rawText = (response.text ?? '{}').trim();

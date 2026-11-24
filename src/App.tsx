@@ -1,4 +1,5 @@
-import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { useLayoutEffect } from 'react';
+import { HashRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { AppStateProvider } from './hooks/useAppState';
 import { BuildScenarioPage } from './pages/BuildScenarioPage';
@@ -10,10 +11,21 @@ import { QuestionsPage } from './pages/QuestionsPage';
 import { ScenarioPage } from './pages/ScenarioPage';
 import { WordsPage } from './pages/WordsPage';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <AppStateProvider>
       <HashRouter>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />

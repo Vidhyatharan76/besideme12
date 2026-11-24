@@ -64,26 +64,62 @@ export interface WordExplanation {
   exampleEnglish: string;
 }
 
-async function withGeminiRetry<T>(fn: () => Promise<T>, maxRetries = 2): Promise<T> {
+const GEMINI_MODEL_CASCADE = [
+  'gemini-4-hydrogen',
+  'gemini-3.1-flash-lite',
+  'gemini-2.5-flash',
+] as const;
+
+type GeminiModelName = (typeof GEMINI_MODEL_CASCADE)[number];
+
+function isFallbackableGeminiError(err: unknown): boolean {
+  const status =
+    typeof err === 'object' && err !== null && 'status' in err
+      ? Number((err as { status?: unknown }).status)
+      : NaN;
+  if (status === 404 || status === 429 || status === 500 || status === 503) {
+    return true;
+  }
+  const msg = (err instanceof Error ? err.message : String(err)).toUpperCase();
+  return (
+    msg.includes('503') ||
+    msg.includes('429') ||
+    msg.includes('500') ||
+    msg.includes('404') ||
+    msg.includes('UNAVAILABLE') ||
+    msg.includes('RESOURCE_EXHAUSTED') ||
+    msg.includes('INTERNAL') ||
+    msg.includes('NOT_FOUND') ||
+    msg.includes('NOT FOUND') ||
+    msg.includes('HIGH DEMAND') ||
+    msg.includes('OVERLOADED')
+  );
+}
+
+async function generateWithModelFallback<T>(
+  runForModel: (modelName: GeminiModelName) => Promise<T>,
+): Promise<T> {
+  const attempts: GeminiModelName[] = [
+    ...GEMINI_MODEL_CASCADE,
+    'gemini-3.1-flash-lite',
+    'gemini-2.5-flash',
+  ];
   let lastError: unknown;
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+
+  for (let i = 0; i < attempts.length; i++) {
+    const modelName = attempts[i];
     try {
-      return await fn();
+      return await runForModel(modelName);
     } catch (err: unknown) {
       lastError = err;
-      const msg = err instanceof Error ? err.message : String(err);
-      const isTransient =
-        msg.includes('429') ||
-        msg.includes('503') ||
-        msg.includes('RESOURCE_EXHAUSTED') ||
-        msg.includes('UNAVAILABLE');
-      if (!isTransient || attempt === maxRetries) {
+      if (!isFallbackableGeminiError(err) || i === attempts.length - 1) {
         break;
       }
-      const delayMs = 600 * Math.pow(2, attempt);
+      const delayMs = i < GEMINI_MODEL_CASCADE.length - 1 ? 250 : 750;
       await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
   }
+
   throw lastError;
 }
 
@@ -111,13 +147,15 @@ export async function generateCustomScenario(
     `- "words" must have 8 to 12 essential visit-specific vocabulary words/short phrases the parent is likely to hear or read on forms (both userText in ${languageName} and localText in ${localLanguageName}).`,
   ].join('\n');
 
-  const response = await withGeminiRetry(() =>
+  const response = await generateWithModelFallback((modelName) =>
     ai.models.generateContent({
-      model: 'gemini-4-hydrogen',
+      model: modelName,
       contents: prompt,
       config: {
         systemInstruction: SCENARIO_SYSTEM_INSTRUCTION,
-        thinkingConfig: { thinkingLevel: ThinkingLevel.MEDIUM },
+        ...(modelName === 'gemini-4-hydrogen'
+          ? { thinkingConfig: { thinkingLevel: ThinkingLevel.MEDIUM } }
+          : {}),
         responseMimeType: 'application/json',
         responseSchema: {
           type: Type.OBJECT,
@@ -291,32 +329,36 @@ export async function explainGlossaryWord(
     `- "exampleEnglish": the same short example sentence in ${localLanguageName}.`,
   ].join('\n');
 
-  const response = await ai.models.generateContent({
-    model: 'gemini-4-hydrogen',
-    contents: prompt,
-    config: {
-      systemInstruction: SCENARIO_SYSTEM_INSTRUCTION,
-      thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
-      responseMimeType: 'application/json',
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          error: { type: Type.STRING },
-          meaningUser: { type: Type.STRING },
-          meaningEnglish: { type: Type.STRING },
-          exampleUser: { type: Type.STRING },
-          exampleEnglish: { type: Type.STRING },
+  const response = await generateWithModelFallback((modelName) =>
+    ai.models.generateContent({
+      model: modelName,
+      contents: prompt,
+      config: {
+        systemInstruction: SCENARIO_SYSTEM_INSTRUCTION,
+        ...(modelName === 'gemini-4-hydrogen'
+          ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } }
+          : {}),
+        responseMimeType: 'application/json',
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            error: { type: Type.STRING },
+            meaningUser: { type: Type.STRING },
+            meaningEnglish: { type: Type.STRING },
+            exampleUser: { type: Type.STRING },
+            exampleEnglish: { type: Type.STRING },
+          },
+          required: [
+            'error',
+            'meaningUser',
+            'meaningEnglish',
+            'exampleUser',
+            'exampleEnglish',
+          ],
         },
-        required: [
-          'error',
-          'meaningUser',
-          'meaningEnglish',
-          'exampleUser',
-          'exampleEnglish',
-        ],
       },
-    },
-  });
+    }),
+  );
 
   const rawText = (response.text ?? '{}').trim();
   const parsed = JSON.parse(rawText) as {
@@ -359,32 +401,36 @@ export async function translateContentBatch(
     JSON.stringify(items),
   ].join('\n');
 
-  const response = await ai.models.generateContent({
-    model: 'gemini-4-hydrogen',
-    contents: prompt,
-    config: {
-      systemInstruction: TRANSLATION_SYSTEM_INSTRUCTION,
-      thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
-      responseMimeType: 'application/json',
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          translations: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                id: { type: Type.STRING },
-                translatedText: { type: Type.STRING },
+  const response = await generateWithModelFallback((modelName) =>
+    ai.models.generateContent({
+      model: modelName,
+      contents: prompt,
+      config: {
+        systemInstruction: TRANSLATION_SYSTEM_INSTRUCTION,
+        ...(modelName === 'gemini-4-hydrogen'
+          ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } }
+          : {}),
+        responseMimeType: 'application/json',
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            translations: {
+              type: Type.ARRAY,
+              items: {
+                type: Type.OBJECT,
+                properties: {
+                  id: { type: Type.STRING },
+                  translatedText: { type: Type.STRING },
+                },
+                required: ['id', 'translatedText'],
               },
-              required: ['id', 'translatedText'],
             },
           },
+          required: ['translations'],
         },
-        required: ['translations'],
       },
-    },
-  });
+    }),
+  );
 
   const rawText = (response.text ?? '{}').trim();
   const parsed = JSON.parse(rawText) as {
@@ -414,23 +460,27 @@ export async function translateSingleWord(
     `Text: "${text}"`,
   ].join('\n');
 
-  const response = await ai.models.generateContent({
-    model: 'gemini-4-hydrogen',
-    contents: prompt,
-    config: {
-      systemInstruction: TRANSLATION_SYSTEM_INSTRUCTION,
-      thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
-      responseMimeType: 'application/json',
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          error: { type: Type.STRING },
-          translatedText: { type: Type.STRING },
+  const response = await generateWithModelFallback((modelName) =>
+    ai.models.generateContent({
+      model: modelName,
+      contents: prompt,
+      config: {
+        systemInstruction: TRANSLATION_SYSTEM_INSTRUCTION,
+        ...(modelName === 'gemini-4-hydrogen'
+          ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } }
+          : {}),
+        responseMimeType: 'application/json',
+        responseSchema: {
+          type: Type.OBJECT,
+          properties: {
+            error: { type: Type.STRING },
+            translatedText: { type: Type.STRING },
+          },
+          required: ['error', 'translatedText'],
         },
-        required: ['error', 'translatedText'],
       },
-    },
-  });
+    }),
+  );
 
   const rawText = (response.text ?? '{}').trim();
   const parsed = JSON.parse(rawText) as { error?: string; translatedText?: string };
@@ -460,12 +510,14 @@ export async function categorizeGlossaryWord(
     '- Avoid returning "general" unless the word is completely generic like "hello" or "thank you".',
   ].join('\n');
 
-  const response = await withGeminiRetry(() =>
+  const response = await generateWithModelFallback((modelName) =>
     ai.models.generateContent({
-      model: 'gemini-4-hydrogen',
+      model: modelName,
       contents: prompt,
       config: {
-        thinkingConfig: { thinkingLevel: ThinkingLevel.LOW },
+        ...(modelName === 'gemini-4-hydrogen'
+          ? { thinkingConfig: { thinkingLevel: ThinkingLevel.LOW } }
+          : {}),
         responseMimeType: 'application/json',
         responseSchema: {
           type: Type.OBJECT,
